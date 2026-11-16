@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f8a8a"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<title>كتاب العناصر التفاعلي – العلوم للصف السادس</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Reem+Kufi:wght@600;700&display=swap">
+<style>
+:root{--bg:#e9f1ef;--paper:#fbfdfc;--ink:#10262c;--mut:#4d6a70;--ac:#1f8a8a;--gold:#d99a1c;--line:#c5d8d5;--card:#f0f7f5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a1e;--paper:#142a30;--ink:#e6f1ef;--mut:#9bb8bc;--ac:#47c1bd;--gold:#f0b73a;--line:#264a52;--card:#1a353c}}
+:root[data-theme="dark"]{--bg:#0d1a1e;--paper:#142a30;--ink:#e6f1ef;--mut:#9bb8bc;--ac:#47c1bd;--gold:#f0b73a;--line:#264a52;--card:#1a353c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.8}
+h1,h2,h3{font-family:'Reem Kufi',Cairo,Tahoma,sans-serif;margin:.2em 0}
+.app{max-width:1000px;margin:0 auto;padding:12px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 2px}
+.top b{font-family:'Reem Kufi',Cairo,sans-serif;font-size:18px}
+button{font-family:inherit;cursor:pointer}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:8px 16px;font-weight:600;font-size:15px}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:disabled{opacity:.4;cursor:default}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.book{background:var(--paper);border:1px solid var(--line);border-radius:6px 22px 22px 6px;border-right:10px solid var(--ac);min-height:70vh;padding:22px;position:relative;overflow:hidden}
+.page{display:none}.page.on{display:block;animation:turn .45s ease}
+@keyframes turn{from{opacity:0;transform:perspective(900px) rotateY(-14deg) translateX(-30px);transform-origin:left}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page.on{animation:none}}
+.meta{color:var(--mut);font-size:14px}
+.goals{border:1.5px dashed var(--ac);border-radius:14px;padding:8px 18px;margin:12px 0;background:var(--card)}
+.goals li{margin:2px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin:12px 0}
+.col{border:1px solid var(--line);border-radius:14px;padding:10px;background:var(--card)}
+.col h3{font-size:18px;text-align:center;border-bottom:2px solid var(--gold);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.el{width:112px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:8px 6px;text-align:center;color:var(--ink);transition:transform .15s}
+.el:hover{transform:translateY(-3px);border-color:var(--ac)}
+.orb{width:56px;height:56px;border-radius:50%;margin:0 auto 4px;display:grid;place-items:center;font:700 20px 'Reem Kufi',sans-serif;color:#fff;text-shadow:0 1px 3px #0008;box-shadow:inset -6px -8px 14px #0005,inset 5px 5px 10px #fff6}
+.el small{display:block;color:var(--mut);font-size:12px;line-height:1.3}
+.hint{font-size:13px;color:var(--mut);margin:6px 0}
+.sci{background:var(--card);border-right:5px solid var(--gold);border-radius:10px;padding:8px 14px;margin:10px 0}
+details{border:1px solid var(--line);border-radius:10px;padding:6px 12px;margin:8px 0;background:var(--card)}
+summary{cursor:pointer;font-weight:600}
+.q{margin:12px 0}
+.lab{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+.blk{flex:1 1 130px;text-align:center;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--card)}
+.stage{height:90px;display:grid;place-items:center}
+.ingot{width:70px;height:46px;border-radius:6px;transition:transform .5s,opacity .5s,filter .5s}
+.ingot.flat{transform:scale(1.5,.3)}.ingot.bent{transform:rotate(-14deg) skewX(-14deg)}
+.ingot.shatter{transform:scale(.7) rotate(8deg);opacity:.35;filter:blur(1px) contrast(2);clip-path:polygon(0 0,40% 10%,55% 0,100% 20%,90% 100%,50% 85%,10% 100%)}
+.rods{display:flex;gap:26px;justify-content:center;align-items:flex-end;height:150px;margin:8px 0}
+.rod{width:26px;height:140px;border-radius:13px;border:2px solid var(--line);background:linear-gradient(0deg,#e05a3a 0%,#e05a3a var(--h,0%),var(--card) var(--h,0%));position:relative;transition:--h 1s}
+.rod span{position:absolute;bottom:-26px;right:50%;transform:translateX(50%);font-size:13px;white-space:nowrap}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);cursor:pointer}.dots i.on{background:var(--gold);width:26px;border-radius:6px}
+#tip{position:fixed;z-index:50;max-width:260px;background:var(--ink);color:var(--paper);padding:8px 12px;border-radius:10px;font-size:14px;line-height:1.5;pointer-events:none;opacity:0;transition:opacity .12s}
+#viewer{position:fixed;inset:0;background:#000b;display:none;z-index:40;padding:max(12px,env(safe-area-inset-top,0px)) 12px max(12px,env(safe-area-inset-bottom,0px))}
+#viewer.on{display:flex;align-items:center;justify-content:center}
+.vbox{background:var(--paper);border-radius:20px;width:min(980px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1.4fr 1fr;gap:0}
+@media(max-width:720px){.vbox{grid-template-columns:1fr}}
+.cv{position:relative;min-height:300px;background:radial-gradient(circle at 50% 40%,#2c5560,#0d1a1e);border-radius:20px 0 0 20px;touch-action:none}
+.cv canvas{width:100%;height:100%;display:block;min-height:300px;cursor:grab}
+.tools{position:absolute;bottom:10px;right:50%;transform:translateX(50%);display:flex;gap:6px}
+.tools button{width:42px;height:42px;border-radius:50%;border:0;background:#fffe;color:#10262c;font-size:20px;font-weight:700}
+.info{padding:18px}
+.info dl{margin:8px 0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}.info dt{color:var(--mut)}.info dd{margin:0;font-weight:600}
+.x{position:absolute;top:10px;left:10px;z-index:2}
+.orb{position:relative;overflow:hidden}.orb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.orb.ph{font-size:0;box-shadow:0 2px 8px #0004}
+.tabs{position:absolute;top:10px;right:10px;display:flex;gap:6px;z-index:2}.tabs button{border:0;border-radius:10px;padding:6px 12px;background:#fffa;color:#10262c;font-weight:600;font-size:13px}.tabs .sel{background:var(--gold)}
+#phL{position:absolute;inset:0;overflow:hidden;display:grid;place-items:center;touch-action:none;background:#0d1a1e;cursor:grab;z-index:1}#phL[hidden]{display:none}
+#phL img{max-width:100%;max-height:100%;transform-origin:center;user-select:none;-webkit-user-drag:none;border-radius:8px}#phL p{color:#fff;text-align:center;padding:20px;direction:rtl}#phL img[hidden],#phL p[hidden]{display:none}
+.tools{z-index:3}.x,.tabs{z-index:4}
+</style>
+</head>
+<body>
+<div class="app">
+ <div class="top"><b>كتاب العناصر التفاعلي</b><div><button class="btn alt" id="th" aria-label="تبديل السمة">☾ / ☀</button></div></div>
+ <div class="book" id="book">
+
+ <section class="page on">
+  <p class="meta">الصف السادس · الفصل الأول · الوحدة: تركيب المادة وخصائصها</p>
+  <h1 style="font-size:38px">العناصر: حالتها ولمعانها وقابليتها للتشكيل</h1>
+  <p>الدرس: بعض الخصائص الفيزيائية والكيميائية للعناصر. اضغط على أي عنصر لتراه مجسّمًا ثلاثي الأبعاد، وضع المؤشر عليه لتظهر معلومات سريعة.</p>
+  <div class="chips" id="all"></div>
+  <p class="hint">في العارض: اسحب للتدوير · عجلة الفأرة أو الأزرار للتقريب والتصغير · قرصة بإصبعين على الهاتف.</p>
+ </section>
+
+ <section class="page">
+  <h2>حالة العنصر وخاصية اللمعان</h2>
+  <div class="goals"><b>الأهداف</b><ul><li>استنتاج الحالات الطبيعية للعناصر.</li><li>تصنيف العناصر حسب حالتها الطبيعية.</li><li>تصنيف العناصر حسب لمعانها وبريقها.</li></ul></div>
+  <div class="sci">توجد العناصر في الطبيعة بثلاث حالات: الصلبة، السائلة، الغازية.</div>
+  <div class="grid">
+   <div class="col"><h3>الحالة الصلبة</h3><div class="chips" data-s="صلبة"></div></div>
+   <div class="col"><h3>الحالة السائلة</h3><div class="chips" data-s="سائلة"></div></div>
+   <div class="col"><h3>الحالة الغازية</h3><div class="chips" data-s="غازية"></div></div>
+  </div>
+  <div class="sci">من العناصر التي لها بريق ولمعان: الذهب، الحديد، النحاس، الألومنيوم.<br>ومن العناصر التي ليس لها بريق ولمعان: الكبريت، الكربون (الجرافيت).</div>
+ </section>
+
+ <section class="page">
+  <h2>نشاط (1): حالة العنصر في الظروف الطبيعية</h2>
+  <p>تأمّل العناصر ثم أجب. (اضغط على أي عنصر لتدويره.)</p>
+  <div class="chips" id="act1"></div>
+  <details class="q"><summary>1) صنّف العناصر: صلب / سائل / غاز</summary>صلب: الصوديوم، الكبريت، النحاس، الحديد · سائل: الزئبق · غاز: الأكسجين.</details>
+  <details class="q"><summary>2) أكمل: توجد العناصر في الطبيعة إما في الحالة … أو … أو …</summary>الصلبة أو السائلة أو الغازية. والزئبق هو الفلز الوحيد الذي يوجد في الحالة السائلة.</details>
+  <h3>نشاط (2)</h3>
+  <details class="q"><summary>جميع العناصر الآتية توجد في الحالة الصلبة ما عدا: الصوديوم، الكبريت، الحديد، الزئبق</summary>الزئبق (د).</details>
+  <details class="q"><summary>عنصر يستخدم في صناعة موازين الحرارة</summary>الزئبق (أ).</details>
+  <details class="q"><summary>أي الرموز يرمز لعنصر غازي: Fe · Na · Cl · S</summary>Cl الكلور (ج).</details>
+  <details class="q"><summary>حالة اليود والبروم والأكسجين والمغنيسيوم والنحاس والكلور</summary>اليود: صلب · البروم: سائل · الأكسجين: غاز · المغنيسيوم: صلب · النحاس: صلب · الكلور: غاز.</details>
+ </section>
+
+ <section class="page">
+  <h2>نشاط (3): اللمعان والبريق المعدني</h2>
+  <p>عند تنظيف سطح كل عنصر بورقة الصنفرة نلاحظ أن بعضها يمتلك خاصية اللمعان. افحص كل عنصر ثم صنّفه:</p>
+  <div class="grid">
+   <div class="col"><h3>لها لمعان وبريق معدني</h3><div class="chips" data-l="1"></div></div>
+   <div class="col"><h3>ليس لها لمعان وبريق معدني</h3><div class="chips" data-l="0"></div></div>
+  </div>
+  <div class="sci"><b>أستنتج:</b> بعض العناصر تمتلك خاصية اللمعان.</div>
+  <details class="q"><summary>فسّر: يُستخدم الذهب في صناعة المجوهرات والحليّ</summary>لأنه عنصر لامع وله بريق معدني جميل، ولا يفقد لمعانه بسهولة، كما يمكن تشكيله بسهولة.</details>
+  <details class="q"><summary>نشاط تفوق: لماذا يُنظَّف العنصر بورق الصنفرة قبل اختبار لمعانه؟</summary>لإزالة الطبقة الخارجية المتأكسدة أو المتّسخة التي تغطي سطحه وتخفي لمعانه الحقيقي.</details>
+ </section>
+
+ <section class="page">
+  <h2>خاصية الطرق والسحب والثني</h2>
+  <div class="goals"><b>الأهداف</b><ul><li>تصنيف العناصر حسب قابليتها للطرق والسحب والثني.</li><li>تصنيف العناصر حسب قدرتها على توصيل الحرارة.</li></ul></div>
+  <div class="sci"><b>الطرق:</b> قابلية المادة لتكوين صفائح. · <b>الثني:</b> قابلية المادة لتكوين أشكال مختلفة. · <b>السحب:</b> قابلية المادة لتكوين أسلاك.<br>من العناصر القابلة للطرق والسحب والثني: الحديد والنحاس والألمنيوم. وغير القابلة: الكبريت والكربون.</div>
+  <h3>جرّب: اطرق بالمطرقة 🔨</h3>
+  <div class="lab" id="hammer"></div>
+  <p class="hint">النحاس والألمنيوم والحديد تنبسط وتنثني، أما الكربون والكبريت فتتكسّر.</p>
+  <details class="q"><summary>نشاط (1): ما العمليات التي قام بها الحدّاد لإعادة تشكيل الحديد؟ وهل يمكنه ذلك دون تسخين؟</summary>طَرَق قطعًا لعمل صفائح، وسَحَب قطعًا لعمل أسلاك، وثَنَى قطعًا لإعادة تشكيلها. التسخين يجعل الحديد ليّنًا فيسهل تشكيله، ودونه يصعب ذلك.<br>قابلية تكوين الصفائح: الطرق · الأسلاك: السحب · التشكيل: الثني.</details>
+  <details class="q"><summary>فسّر: تدخل بعض العناصر مثل النحاس والألمنيوم في صناعة الأسلاك</summary>لأنها قابلة للسحب فتتحول إلى أسلاك رفيعة، ولأنها جيدة التوصيل.</details>
+  <details class="q"><summary>نشاط (3): الأسئلة المحوسبة</summary>1) د: جميع ما سبق · 2) ب: الكبريت · 3) أ: (Al, Cu, Fe) · 4) د: الحديد والنحاس معًا.</details>
+ </section>
+
+ <section class="page">
+  <h2>توصيل الحرارة</h2>
+  <div class="sci">تتفاوت العناصر في قدرتها على توصيل الحرارة: منها جيد التوصيل مثل الحديد والنحاس، ومنها رديء التوصيل مثل الكربون.</div>
+  <h3>تجربة: توصيل العناصر للحرارة</h3>
+  <p>ثُبّتت بذور دوّار الشمس على قضبان من النحاس والحديد والكربون، وغُمس الطرف الآخر من كل قضيب في ماء ساخن. اضغط «ابدأ».</p>
+  <div class="rods" id="rods">
+   <div class="rod" data-r="92"><span>النحاس</span></div>
+   <div class="rod" data-r="60"><span>الحديد</span></div>
+   <div class="rod" data-r="12"><span>الكربون</span></div>
+  </div>
+  <p style="text-align:center;margin-top:34px"><button class="btn" id="heat">ابدأ التجربة</button> <button class="btn alt" id="cool">إعادة</button></p>
+  <details class="q"><summary>المشاهدة والاستنتاج</summary>تسقط البذور عن قضيب النحاس أولًا ثم الحديد، ولا تسقط عن الكربون. الاستنتاج: النحاس والحديد جيدا التوصيل للحرارة، والكربون رديء التوصيل.</details>
+  <details class="q"><summary>نشاط تفوق: رتّب (ألمنيوم، حديد، نحاس) تصاعديًا في توصيل الحرارة</summary>حديد ← ألمنيوم ← نحاس (النحاس الأفضل توصيلًا).</details>
+ </section>
+ </div>
+ <div class="nav"><button class="btn" id="nx">التالي ‹</button><div class="dots" id="dots"></div><button class="btn alt" id="pv">› السابق</button></div>
+</div>
+
+<div id="tip"></div>
+<div id="viewer" role="dialog" aria-modal="true" aria-label="عارض ثلاثي الأبعاد">
+ <div class="vbox">
+  <div class="cv" id="cv"><button class="btn x" id="close">✕ إغلاق</button><div class="tabs"><button id="t3" class="sel">مجسّم ثلاثي الأبعاد</button><button id="tp">صورة حقيقية</button></div><div id="phL" hidden><img id="phI" alt=""><p id="phM" hidden></p></div><canvas id="c"></canvas>
+   <div class="tools"><button id="zi" aria-label="تقريب">＋</button><button id="zo" aria-label="تصغير">－</button><button id="rs" aria-label="إعادة ضبط">⟲</button><button id="ar" aria-label="دوران تلقائي">⟳</button></div></div>
+  <div class="info"><h2 id="vn"></h2><dl id="vi"></dl><p class="hint">في وضع «صورة حقيقية» يمكنك التكبير بالعجلة أو القرصة، والسحب للتحريك، والنقر المزدوج للتبديل بين التكبير والحجم الأصلي. في وضع المجسّم: اسحب لتدوير المجسّم، ومرّر العجلة أو اقرص للتقريب. ضع المؤشر على المجسّم لعرض اسمه.</p></div>
+ </div>
+</div>
+
+<script src="three.min.js"></script>
+<script>
+// id, الاسم, الرمز, الحالة, لمعان, طرق, توصيل, استخدام, اللون, الشكل
+const D=[
+['au','الذهب','Au','صلبة',1,1,'جيد','صناعة المجوهرات والحليّ','#e6b422','nugget'],
+['fe','الحديد','Fe','صلبة',1,1,'جيد','المسامير والأدوات','#8a9099','nails'],
+['cu','النحاس','Cu','صلبة',1,1,'جيد','الأسلاك الكهربائية والأنابيب','#c8742c','fit'],
+['al','الألمنيوم','Al','صلبة',1,1,'جيد','الأسلاك والأواني','#c9ced6','tray'],
+['s','الكبريت','S','صلبة',0,0,'رديء','صناعة أعواد الثقاب','#f2d21b','nugget'],
+['c','الكربون (جرافيت)','C','صلبة',0,0,'رديء','أقلام الرصاص','#2b2b32','rods'],
+['hg','الزئبق','Hg','سائلة',1,null,null,'صناعة موازين الحرارة','#cfd3d8','drops'],
+['na','الصوديوم','Na','صلبة',1,null,null,'عنصر نشط يُحفظ بعيدًا عن الماء','#b9bcc4','chunks'],
+['o','الأكسجين','O','غازية',0,null,null,'التنفس وأسطوانات الغوص','#3aa0d8','tank'],
+['cl','الكلور','Cl','غازية',0,null,null,'تعقيم المياه','#8fd14f','tank'],
+['br','البروم','Br','سائلة',null,null,null,'سائل أحمر مائل للبني','#8b2f1c','drops'],
+['i','اليود','I','صلبة',null,null,null,'مطهّر','#4b2a6b','nugget'],
+['mg','المغنيسيوم','Mg','صلبة',null,null,null,'عنصر فلزي صلب','#d5d9de','chunks']];
+const M={};D.forEach(d=>M[d[0]]=d);
+const yn=(v,a,b)=>v==null?'—':v?a:b;
+const tipTxt=d=>`<b>${d[1]} (${d[2]})</b><br>الحالة: ${d[3]}<br>اللمعان: ${yn(d[4],'لامع','غير لامع')}<br>${d[7]}`;
+function chip(d){const b=document.createElement('button');b.className='el';b.dataset.k=d[0];
+ b.innerHTML=`<div class="orb" style="background:radial-gradient(circle at 35% 30%,#fff9,${d[8]} 55%,#000a)">${d[2]}<img src="images/${d[0]}.jpg" alt="${d[1]}" loading="lazy" onload="this.parentNode.classList.add('ph')" onerror="this.remove()"></div>${d[1]}<small>${d[3]}</small>`;return b}
+const fill=(sel,fn)=>document.querySelectorAll(sel).forEach(h=>D.filter(d=>fn(d,h)).forEach(d=>h.appendChild(chip(d))));
+document.getElementById('all').append(...D.map(chip));
+fill('[data-s]',(d,h)=>d[3]===h.dataset.s);
+fill('[data-l]',(d,h)=>d[4]!=null&&d[4]==h.dataset.l);
+const a1=document.getElementById('act1');['na','s','hg','cu','fe','o'].forEach(k=>a1.appendChild(chip(M[k])));
+// المطرقة
+const hm=document.getElementById('hammer');
+['cu','al','fe','c','s'].forEach(k=>{const d=M[k],ok=d[5];const e=document.createElement('div');e.className='blk';
+ e.innerHTML=`<div class="stage"><div class="ingot" style="background:linear-gradient(135deg,#fff7,${d[8]} 40%,#0006)"></div></div><b>${d[1]}</b><br><button class="btn">اطرق</button>`;
+ const ing=e.querySelector('.ingot');e.querySelector('button').onclick=()=>{ing.className='ingot';void ing.offsetWidth;ing.classList.add(ok?(Math.random()<.5?'flat':'bent'):'shatter')};hm.appendChild(e)});
+// التوصيل
+const rods=[...document.querySelectorAll('.rod')];let tm=[];
+document.getElementById('heat').onclick=()=>rods.forEach(r=>{const t=+r.dataset.r;let h=0;const id=setInterval(()=>{h=Math.min(t,h+t/40);r.style.setProperty('--h',h+'%');if(h>=t)clearInterval(id)},t>50?40:90);tm.push(id)});
+document.getElementById('cool').onclick=()=>{tm.forEach(clearInterval);rods.forEach(r=>r.style.setProperty('--h','0%'))};
+// الصفحات
+const P=[...document.querySelectorAll('.page')],dots=document.getElementById('dots');let cur=0;
+P.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>go(i);dots.appendChild(d)});
+function go(i){cur=Math.max(0,Math.min(P.length-1,i));P.forEach((p,j)=>p.classList.toggle('on',j==cur));[...dots.children].forEach((d,j)=>d.classList.toggle('on',j==cur));
+ nx.disabled=cur==P.length-1;pv.disabled=cur==0;scrollTo({top:0})}
+const nx=document.getElementById('nx'),pv=document.getElementById('pv');nx.onclick=()=>go(cur+1);pv.onclick=()=>go(cur-1);
+addEventListener('keydown',e=>{if(viewer.classList.contains('on')){if(e.key=='Escape')closeV();return}if(e.key=='ArrowLeft')go(cur+1);if(e.key=='ArrowRight')go(cur-1)});go(0);
+document.getElementById('th').onclick=()=>{const r=document.documentElement,dk=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=dk?'light':'dark'};
+// التلميح
+const tip=document.getElementById('tip');
+document.addEventListener('mousemove',e=>{const t=e.target.closest&&e.target.closest('[data-k]');
+ if(t&&!viewer.classList.contains('on')){tip.innerHTML=tipTxt(M[t.dataset.k]);tip.style.opacity=1;tip.style.left=Math.min(innerWidth-270,e.clientX+14)+'px';tip.style.top=(e.clientY+16)+'px'}else if(!hovObj)tip.style.opacity=0});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-k]');if(t)openV(t.dataset.k)});
+// ثلاثي الأبعاد
+const viewer=document.getElementById('viewer'),cv=document.getElementById('cv'),canvas=document.getElementById('c');
+let R,S,Cm,G,on=false,auto=true,dist=6,hovObj=null,drag=false,lx=0,ly=0,cur3=null;const pts=new Map();
+function init(){R=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
+ S=new THREE.Scene();Cm=new THREE.PerspectiveCamera(40,1,.1,50);
+ S.add(new THREE.AmbientLight(0xffffff,.55));const l=new THREE.DirectionalLight(0xffffff,.9);l.position.set(3,4,5);S.add(l);
+ const l2=new THREE.PointLight(0x9fe,.6);l2.position.set(-4,-2,3);S.add(l2);}
+function mat(c,sh){return new THREE.MeshPhongMaterial({color:c,shininess:sh?130:6,specular:sh?0xffffff:0x111111,flatShading:false})}
+function build(d){const g=new THREE.Group(),sh=d[4]!==0,m=mat(d[8],sh),t=d[9];
+ const add=(geo,p=[0,0,0],r=[0,0,0],mm=m)=>{const o=new THREE.Mesh(geo,mm);o.position.set(...p);o.rotation.set(...r);g.add(o);return o};
+ if(t=='nugget'){const geo=new THREE.IcosahedronGeometry(1.3,2),p=geo.attributes.position;for(let i=0;i<p.count;i++){const x=p.getX(i),y=p.getY(i),z=p.getZ(i),k=1+.18*Math.sin(x*3.1+y*2.3)*Math.cos(z*2.7+1);p.setXYZ(i,x*k,y*k*.85,z*k)}geo.computeVertexNormals();add(geo,[0,0,0],[0,0,0],new THREE.MeshPhongMaterial({color:d[8],shininess:sh?130:6,specular:sh?0xffffff:0x111111,flatShading:true}))}
+ if(t=='nails')for(let i=0;i<8;i++){const a=i*.9,o=add(new THREE.CylinderGeometry(.06,.06,2.6,10),[Math.sin(a)*.5,(i%3-1)*.3,Math.cos(a*1.7)*.4],[a*.6,0,a*.9+.4]);const h=new THREE.Mesh(new THREE.CylinderGeometry(.16,.16,.06,14),m);h.position.y=1.3;o.add(h)}
+ if(t=='fit'){add(new THREE.CylinderGeometry(.9,.9,1.8,40,1,true),[0,0,0],[0,0,0],new THREE.MeshPhongMaterial({color:d[8],shininess:130,specular:0xffffff,side:THREE.DoubleSide}));[.9,-.9].forEach(y=>add(new THREE.TorusGeometry(.9,.12,16,40),[0,y,0],[Math.PI/2,0,0]));add(new THREE.CylinderGeometry(.62,.62,1.6,32,1,true),[0,0,0],[0,0,0],new THREE.MeshPhongMaterial({color:'#8a4a1a',side:THREE.DoubleSide}));add(new THREE.TorusGeometry(.95,.05,8,6),[0,0,0],[Math.PI/2,0,0])}
+ if(t=='tray'){add(new THREE.BoxGeometry(2.6,.12,1.7),[0,-.35,0]);[[0,-.3,.85,2.6,.7,.1],[0,-.3,-.85,2.6,.7,.1],[1.3,-.3,0,.1,.7,1.7],[-1.3,-.3,0,.1,.7,1.7]].forEach(w=>add(new THREE.BoxGeometry(w[3],w[4],w[5]),[w[0],w[1],w[2]]))}
+ if(t=='rods')for(let i=0;i<5;i++)add(new THREE.CylinderGeometry(.28,.28,2.4,24),[(i-2)*.62+((i%2)*.1),(i%2)*.15,0],[0,0,0]);
+ if(t=='drops'){[[0,-.5,0,.9],[1.1,-.75,.3,.55],[-1,-.8,.2,.45],[.3,-.9,-1,.35],[-.3,.3,.4,.0001]].forEach(s=>add(new THREE.SphereGeometry(s[3],40,28),[s[0],s[1],s[2]],[0,0,0]));add(new THREE.CylinderGeometry(1.9,1.9,.04,48),[0,-1.4,0],[0,0,0],new THREE.MeshPhongMaterial({color:0x223a40}));g.children.forEach((o,i)=>{if(i<4)o.position.y-=.35+(i?0:.1)})}
+ if(t=='chunks')[[0,0,0,1.2,.9,1],[1,-.2,.5,.8,.6,.8],[-1,-.3,-.4,.7,.7,.9]].forEach((b,i)=>add(new THREE.BoxGeometry(b[3],b[4],b[5]),[b[0],b[1],b[2]],[.3*i,.5+i,.2*i]));
+ if(t=='tank'){add(new THREE.CylinderGeometry(.65,.65,2.2,36),[0,-.3,0]);add(new THREE.SphereGeometry(.65,36,18,0,Math.PI*2,0,Math.PI/2),[0,.8,0]);add(new THREE.CylinderGeometry(.1,.1,.4,12),[0,1.6,0],[0,0,0],mat('#777c84',1));add(new THREE.TorusGeometry(.2,.05,8,16),[0,1.85,0],[0,0,0],mat('#777c84',1))}
+ g.traverse(o=>o.isMesh&&(o.userData.d=d));return g}
+function size(){const w=cv.clientWidth,h=Math.max(300,cv.clientHeight);R.setSize(w,h,false);Cm.aspect=w/h;Cm.updateProjectionMatrix()}
+function openV(k){const d=M[k];cur3=d;if(!R)init();viewer.classList.add('on');setMode('3d');loadPhoto(k);
+ if(G)S.remove(G);G=build(d);S.add(G);G.rotation.set(.3,0,0);dist=6;auto=true;on=true;size();
+ vn.textContent=`${d[1]} (${d[2]})`;
+ vi.innerHTML=`<dt>الحالة</dt><dd>${d[3]}</dd><dt>اللمعان</dt><dd>${yn(d[4],'لامع','غير لامع')}</dd><dt>الطرق والسحب</dt><dd>${yn(d[5],'قابل','غير قابل')}</dd><dt>توصيل الحرارة</dt><dd>${d[6]||'—'}</dd><dt>الاستخدام</dt><dd>${d[7]}</dd>`;loop()}
+let mode='3d',pz=1,px=0,py=0;const phL=document.getElementById('phL'),phI=document.getElementById('phI'),phM=document.getElementById('phM');
+const papply=()=>phI.style.transform=`translate(${px}px,${py}px) scale(${pz})`;
+const pzoom=f=>{pz=Math.max(1,Math.min(6,pz*f));if(pz==1)px=py=0;papply()};
+function setMode(m){mode=m;phL.hidden=m!=='photo';canvas.style.visibility=m=='photo'?'hidden':'visible';t3.classList.toggle('sel',m=='3d');tp.classList.toggle('sel',m=='photo');pz=1;px=py=0;papply()}
+t3.onclick=()=>setMode('3d');tp.onclick=()=>setMode('photo');
+function loadPhoto(k){phI.hidden=true;phM.hidden=false;phM.textContent='جارٍ تحميل الصورة…';
+ phI.onload=()=>{phI.hidden=false;phM.hidden=true};phI.onerror=()=>{phI.hidden=true;phM.hidden=false;phM.textContent='لم تُضَف الصورة الحقيقية لهذا العنصر بعد. ضعها في المجلد images باسم '+k+'.jpg';};phI.src='images/'+k+'.jpg'}
+const pp=new Map();let pdist=0,pdrag=false,plx=0,ply=0;
+phL.addEventListener('wheel',e=>{e.preventDefault();pzoom(e.deltaY>0?1/1.12:1.12)},{passive:false});
+phL.addEventListener('dblclick',()=>{pz=pz>1?1:2.5;if(pz==1)px=py=0;papply()});
+phL.addEventListener('pointerdown',e=>{phL.setPointerCapture(e.pointerId);pp.set(e.pointerId,[e.clientX,e.clientY]);pdrag=true;plx=e.clientX;ply=e.clientY});
+phL.addEventListener('pointermove',e=>{if(pp.has(e.pointerId))pp.set(e.pointerId,[e.clientX,e.clientY]);
+ if(pp.size==2){const [a,b]=[...pp.values()],n=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pdist)pzoom(n/pdist);pdist=n;return}
+ if(pdrag&&pz>1){px+=e.clientX-plx;py+=e.clientY-ply;plx=e.clientX;ply=e.clientY;papply();return}
+ if(!pdrag&&!phI.hidden){tip.innerHTML=`<b>${cur3[1]} (${cur3[2]})</b><br>${cur3[3]} · ${yn(cur3[4],'لامع','غير لامع')}<br>${cur3[7]}`;tip.style.opacity=1;tip.style.left=Math.min(innerWidth-270,e.clientX+14)+'px';tip.style.top=(e.clientY+16)+'px'}});
+phL.addEventListener('pointerleave',()=>tip.style.opacity=0);
+const pup=e=>{pp.delete(e.pointerId);pdist=0;if(!pp.size)pdrag=false};phL.addEventListener('pointerup',pup);phL.addEventListener('pointercancel',pup);
+function closeV(){viewer.classList.remove('on');on=false;tip.style.opacity=0;hovObj=null}
+function loop(){if(!on)return;requestAnimationFrame(loop);if(auto&&!drag)G.rotation.y+=.008;Cm.position.set(0,0,dist);Cm.lookAt(0,0,0);R.render(S,Cm)}
+const zoom=f=>dist=Math.max(2.5,Math.min(12,dist*f));
+addEventListener('resize',()=>on&&size());
+zi.onclick=()=>mode=='photo'?pzoom(1.3):zoom(.8);zo.onclick=()=>mode=='photo'?pzoom(1/1.3):zoom(1.25);rs.onclick=()=>{if(mode=='photo'){pz=1;px=py=0;papply()}else{G.rotation.set(.3,0,0);dist=6}};ar.onclick=()=>auto=!auto;close.onclick=closeV;
+viewer.addEventListener('click',e=>{if(e.target==viewer)closeV()});
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.1:.9)},{passive:false});
+canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);pts.set(e.pointerId,[e.clientX,e.clientY]);drag=true;lx=e.clientX;ly=e.clientY;canvas.style.cursor='grabbing'});
+let pd=0;
+canvas.addEventListener('pointermove',e=>{if(pts.has(e.pointerId))pts.set(e.pointerId,[e.clientX,e.clientY]);
+ if(pts.size==2){const [a,b]=[...pts.values()],n=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pd)zoom(pd/n);pd=n;return}
+ if(drag){G.rotation.y+=(e.clientX-lx)*.01;G.rotation.x+=(e.clientY-ly)*.01;lx=e.clientX;ly=e.clientY;return}
+ const r=canvas.getBoundingClientRect(),v=new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1),rc=new THREE.Raycaster();rc.setFromCamera(v,Cm);
+ const h=rc.intersectObject(G,true)[0];hovObj=h?h.object:null;
+ if(h){tip.innerHTML=`<b>${cur3[1]}</b> — ${cur3[3]}`;tip.style.opacity=1;tip.style.left=Math.min(innerWidth-270,e.clientX+14)+'px';tip.style.top=(e.clientY+16)+'px'}else tip.style.opacity=0});
+const up=e=>{pts.delete(e.pointerId);pd=0;if(!pts.size){drag=false;canvas.style.cursor='grab'}};
+canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',up);
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script>
+</body>
+</html>
